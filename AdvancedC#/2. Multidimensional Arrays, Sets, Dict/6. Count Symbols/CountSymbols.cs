@@ -48,11 +48,18 @@ namespace _6.Count_Symbols
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Please enter a text to count each character occurence:");
             string input = Console.ReadLine();
 
-            for (int i = 0; i < input.Length; i++)
+            //for loop for all ASCII codes
+            for (int i = 32; i < 128; i++)
             {
-                
+                char symbol = (char)i;
+                if (input.Contains(symbol))
+                {
+                   int count = input.Count(s => s==symbol);
+                   Console.WriteLine("{0}: {1} time/s",symbol,count);
+                }
             }
         }
     }
